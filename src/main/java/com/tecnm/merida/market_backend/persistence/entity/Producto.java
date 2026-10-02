@@ -3,6 +3,8 @@ package com.tecnm.merida.market_backend.persistence.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CollectionId;
 
+import java.util.List;
+
 @Entity
 @Table (name = "Productos")
 
@@ -28,4 +30,68 @@ public class Producto {
     private Integer catidadStock;
 
     private Boolean estado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
+    //ojito
+    @OneToMany(mappedBy = "producto")
+    private List<CompraProducto> compraProductos;
+
+    public Integer getIdProducto() {
+        return idProducto;
+    }
+
+    public void setIdProducto(Integer idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Integer getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(Integer idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getCodigoBarras() {
+        return codigoBarras;
+    }
+
+    public void setCodigoBarras(String codigoBarras) {
+        this.codigoBarras = codigoBarras;
+    }
+
+    public Double getPrecioVentas() {
+        return precioVentas;
+    }
+
+    public void setPrecioVentas(Double precioVentas) {
+        this.precioVentas = precioVentas;
+    }
+
+    public Integer getCatidadStock() {
+        return catidadStock;
+    }
+
+    public void setCatidadStock(Integer catidadStock) {
+        this.catidadStock = catidadStock;
+    }
+
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Boolean estado) {
+        this.estado = estado;
+    }
 }
