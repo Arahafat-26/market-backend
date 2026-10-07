@@ -44,18 +44,22 @@ public class Producto {
     }
 
     public void setIdProducto(Integer idProducto) {
+
         this.idProducto = idProducto;
     }
 
     public String getNombre() {
+
         return nombre;
     }
 
     public void setNombre(String nombre) {
+
         this.nombre = nombre;
     }
 
     public Integer getIdCategoria() {
+
         return idCategoria;
     }
 
@@ -64,34 +68,58 @@ public class Producto {
     }
 
     public String getCodigoBarras() {
+
         return codigoBarras;
     }
 
     public void setCodigoBarras(String codigoBarras) {
+
         this.codigoBarras = codigoBarras;
     }
 
     public Double getPrecioVentas() {
+
         return precioVentas;
     }
 
     public void setPrecioVentas(Double precioVentas) {
+
         this.precioVentas = precioVentas;
     }
 
     public Integer getCatidadStock() {
+
         return catidadStock;
     }
 
     public void setCatidadStock(Integer catidadStock) {
+
         this.catidadStock = catidadStock;
     }
 
     public Boolean getEstado() {
+
         return estado;
     }
 
     public void setEstado(Boolean estado) {
+
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public List<CompraProducto> getCompraProductos() {
+        return compraProductos;
+    }
+
+    public void setCompraProductos(List<CompraProducto> compraProductos) {
+        this.compraProductos = compraProductos;
     }
 }
