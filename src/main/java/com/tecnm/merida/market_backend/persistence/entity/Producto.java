@@ -1,13 +1,10 @@
 package com.tecnm.merida.market_backend.persistence.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CollectionId;
-
 import java.util.List;
 
 @Entity
-@Table (name = "Productos")
-
+@Table(name = "Productos")
 public class Producto {
 
     @Id
@@ -27,7 +24,7 @@ public class Producto {
     private Double precioVentas;
 
     @Column(name = "cantidad_stock")
-    private Integer catidadStock;
+    private Integer cantidadStock;
 
     private Boolean estado;
 
@@ -35,7 +32,6 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
-    //ojito
     @OneToMany(mappedBy = "producto")
     private List<CompraProducto> compraProductos;
 
@@ -44,22 +40,18 @@ public class Producto {
     }
 
     public void setIdProducto(Integer idProducto) {
-
         this.idProducto = idProducto;
     }
 
     public String getNombre() {
-
         return nombre;
     }
 
     public void setNombre(String nombre) {
-
         this.nombre = nombre;
     }
 
     public Integer getIdCategoria() {
-
         return idCategoria;
     }
 
@@ -68,42 +60,34 @@ public class Producto {
     }
 
     public String getCodigoBarras() {
-
         return codigoBarras;
     }
 
     public void setCodigoBarras(String codigoBarras) {
-
         this.codigoBarras = codigoBarras;
     }
 
     public Double getPrecioVentas() {
-
         return precioVentas;
     }
 
     public void setPrecioVentas(Double precioVentas) {
-
         this.precioVentas = precioVentas;
     }
 
-    public Integer getCatidadStock() {
-
-        return catidadStock;
+    public Integer getCantidadStock() {
+        return cantidadStock;
     }
 
-    public void setCatidadStock(Integer catidadStock) {
-
-        this.catidadStock = catidadStock;
+    public void setCantidadStock(Integer cantidadStock) {
+        this.cantidadStock = cantidadStock;
     }
 
     public Boolean getEstado() {
-
         return estado;
     }
 
     public void setEstado(Boolean estado) {
-
         this.estado = estado;
     }
 
